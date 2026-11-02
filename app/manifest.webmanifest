@@ -1,0 +1,85 @@
+{
+  "id": "./",
+  "name": "Learn Kanji: Pen-Enabled",
+  "short_name": "Learn Kanji",
+  "description": "Learn to write 2,141 kanji with your pen, covering every jōyō kanji: the kanji of Basic Kanji Book and Intermediate Kanji Book (Vols. 1 and 2 of each), then two Advanced levels of themed lessons. Stroke-order animations, tracing, writing from memory with stroke-by-stroke checking, and spaced reviews.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f4f6f1",
+  "theme_color": "#f4f6f1",
+  "categories": [
+    "education",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "icons/screenshot-wide.png",
+      "sizes": "1440x960",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Writing a kanji from memory with stroke-by-stroke checking"
+    },
+    {
+      "src": "icons/screenshot-home.png",
+      "sizes": "1440x960",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Lessons and review progress"
+    },
+    {
+      "src": "icons/screenshot-narrow.png",
+      "sizes": "960x1440",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Tracing a kanji in portrait"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Review due kanji",
+      "short_name": "Review",
+      "url": "./#review",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Continue learning",
+      "short_name": "Continue",
+      "url": "./#continue",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
