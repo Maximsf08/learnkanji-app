@@ -1,12 +1,26 @@
 /* Learn Kanji offline worker (cache names keep the code name kakitori): serves the app from cache so it works without a connection. */
-const VERSION = '1.4.0-0f35107bf7';
+const VERSION = '1.4.0-1e33a8deff';
 // 'kakitori-' for the complete web app, 'kakitori-web-' for the web edition (whose site may still clear the
 // earlier web version's 'kakitori-' caches)
 const CACHE = 'kakitori-web-' + VERSION;
 const ASSETS = ["./", "./index.html", "./manifest.webmanifest", "./privacy.html", "./fonts/klee-one-400.woff2", "./fonts/klee-one-600.woff2", "./games/koi.html", "./games/kitchen.html", "./games/road.html", "./games/school.html", "./games/castle.html", "./games/alchemy.html", "./games/tiles.html", "./icons/app-icon-300.png", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/icon-small.svg", "./icons/icon.svg", "./icons/maskable-512.png"];
 
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS.map(a => new Request(a, { cache: 'reload' })))));
+  event.waitUntil((async () => {
+    const cache = await caches.open(CACHE);
+    await cache.addAll(ASSETS.map(a => new Request(a, { cache: 'reload' })));
+    // The interface languages this device has used (lang/<code>.js, cached when first loaded): fetched again for
+    // the new version, so the app stays in its language offline.
+    const used = new Set();
+    for (const key of await caches.keys()) {
+      if (!key.startsWith('kakitori-web-') || key === CACHE) continue;
+      for (const r of await (await caches.open(key)).keys()) {
+        const path = new URL(r.url).pathname;
+        if (/\/lang\/[\w-]+\.js$/.test(path)) used.add(path);
+      }
+    }
+    await Promise.all([...used].map(p => cache.add(new Request(p, { cache: 'reload' })).catch(() => {})));
+  })());
 });
 
 self.addEventListener('activate', event => {
