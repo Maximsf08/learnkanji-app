@@ -119,6 +119,8 @@ section.band.alt { background: var(--bg-2); }
 footer { border-top: 1px solid var(--rule); padding-block: 22px 32px; color: var(--faint); font-size: 14px; }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; }
 footer a { color: var(--muted); }
+.langnav { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13px; }
+.langnav a[aria-current] { color: var(--fg, inherit); font-weight: 600; text-decoration: none; }
 
 @media (max-width: 900px) {
   .hero .wrap { grid-template-columns: minmax(0, 1fr); padding-top: 36px; gap: 30px; }
@@ -133,6 +135,20 @@ footer a { color: var(--muted); }
   .gallery { grid-auto-columns: 88%; }
 }
 </style>
+<link rel="alternate" hreflang="en" href="https://learnkanji.app/">
+<link rel="alternate" hreflang="x-default" href="https://learnkanji.app/">
+<link rel="alternate" hreflang="zh-Hans" href="https://learnkanji.app/zh-Hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://learnkanji.app/zh-Hant/">
+<link rel="alternate" hreflang="ko" href="https://learnkanji.app/ko/">
+<link rel="alternate" hreflang="vi" href="https://learnkanji.app/vi/">
+<link rel="alternate" hreflang="id" href="https://learnkanji.app/id/">
+<link rel="alternate" hreflang="th" href="https://learnkanji.app/th/">
+<link rel="alternate" hreflang="es" href="https://learnkanji.app/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://learnkanji.app/pt-BR/">
+<link rel="alternate" hreflang="fr" href="https://learnkanji.app/fr/">
+<link rel="alternate" hreflang="de" href="https://learnkanji.app/de/">
+<link rel="alternate" hreflang="it" href="https://learnkanji.app/it/">
+<link rel="alternate" hreflang="ru" href="https://learnkanji.app/ru/">
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -259,7 +275,9 @@ footer a { color: var(--muted); }
 <footer><div class="wrap">
   <span>© 2026 Maxim Sharakin · Learn Kanji is not made or endorsed by Microsoft or Apple.</span>
   <span><a href="privacy.html">Privacy policy</a></span>
+  <nav class="langnav" id="languages" aria-label="This page in other languages"><a href="./" hreflang="en" lang="en" aria-current="page">English</a><a href="zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="ko/" hreflang="ko" lang="ko">한국어</a><a href="vi/" hreflang="vi" lang="vi">Tiếng Việt</a><a href="id/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="th/" hreflang="th" lang="th">ไทย</a><a href="es/" hreflang="es" lang="es">Español</a><a href="pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="fr/" hreflang="fr" lang="fr">Français</a><a href="de/" hreflang="de" lang="de">Deutsch</a><a href="it/" hreflang="it" lang="it">Italiano</a><a href="ru/" hreflang="ru" lang="ru">Русский</a></nav>
 </div></footer>
 
-</body>
+<script>(function(){var A={"zh-Hans": "简体中文", "zh-Hant": "繁體中文", "ko": "한국어", "vi": "Tiếng Việt", "id": "Bahasa Indonesia", "th": "ไทย", "es": "Español", "pt-BR": "Português (Brasil)", "fr": "Français", "de": "Deutsch", "it": "Italiano", "ru": "Русский"},n=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||''];for(var i=0;i<n.length;i++){var x=String(n[i]),b=x.toLowerCase().split('-')[0],c=null;if(b==='en')return;if(b==='zh')c=/hant|-tw|-hk|-mo/i.test(x)?'zh-Hant':'zh-Hans';else if(b==='pt')c='pt-BR';else if(b==='in')c='id';else for(var k in A)if(k.toLowerCase()===b)c=k;if(c&&A[c]){var a=document.createElement('a');a.href=c+'/';a.lang=c;a.hreflang=c;a.className='langhint';a.textContent=A[c]+' →';document.body.insertBefore(a,document.body.firstChild);return}}})();</script>
+<style>.langhint{display:block;padding:7px 16px;text-align:center;font-size:15px;font-weight:600;background:#1a6a53;color:#fff;text-decoration:none}.langhint:hover{text-decoration:underline}</style></body>
 </html>

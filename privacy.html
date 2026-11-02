@@ -13,7 +13,23 @@ h1 { font-size: 28px; margin: 0 0 4px; }
 h2 { font-size: 20px; margin: 28px 0 4px; }
 p, li { color: var(--muted); }
 a { color: var(--accent); }
+.langnav { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 32px; font-size: 13px; }
+.langnav a[aria-current] { color: var(--fg); font-weight: 600; text-decoration: none; }
 </style>
+<link rel="alternate" hreflang="en" href="https://learnkanji.app/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://learnkanji.app/privacy.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://learnkanji.app/zh-Hans/privacy.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://learnkanji.app/zh-Hant/privacy.html">
+<link rel="alternate" hreflang="ko" href="https://learnkanji.app/ko/privacy.html">
+<link rel="alternate" hreflang="vi" href="https://learnkanji.app/vi/privacy.html">
+<link rel="alternate" hreflang="id" href="https://learnkanji.app/id/privacy.html">
+<link rel="alternate" hreflang="th" href="https://learnkanji.app/th/privacy.html">
+<link rel="alternate" hreflang="es" href="https://learnkanji.app/es/privacy.html">
+<link rel="alternate" hreflang="pt-BR" href="https://learnkanji.app/pt-BR/privacy.html">
+<link rel="alternate" hreflang="fr" href="https://learnkanji.app/fr/privacy.html">
+<link rel="alternate" hreflang="de" href="https://learnkanji.app/de/privacy.html">
+<link rel="alternate" hreflang="it" href="https://learnkanji.app/it/privacy.html">
+<link rel="alternate" hreflang="ru" href="https://learnkanji.app/ru/privacy.html">
 </head>
 <body>
 <main>
@@ -40,6 +56,8 @@ a { color: var(--accent); }
 <li>If you used the earlier web version at maximsf08.github.io/learn-kanji, that address can bring your progress to the web edition in the same browser. It passes the progress in the part of the link after the "#", which browsers do not send to any server, and the web edition asks before it takes it in.</li>
 </ul>
 <p><a href="./">Back to Learn Kanji</a></p>
+<nav class="langnav" id="languages" aria-label="This page in other languages"><a href="privacy.html" hreflang="en" lang="en" aria-current="page">English</a><a href="zh-Hans/privacy.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="zh-Hant/privacy.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="ko/privacy.html" hreflang="ko" lang="ko">한국어</a><a href="vi/privacy.html" hreflang="vi" lang="vi">Tiếng Việt</a><a href="id/privacy.html" hreflang="id" lang="id">Bahasa Indonesia</a><a href="th/privacy.html" hreflang="th" lang="th">ไทย</a><a href="es/privacy.html" hreflang="es" lang="es">Español</a><a href="pt-BR/privacy.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a><a href="fr/privacy.html" hreflang="fr" lang="fr">Français</a><a href="de/privacy.html" hreflang="de" lang="de">Deutsch</a><a href="it/privacy.html" hreflang="it" lang="it">Italiano</a><a href="ru/privacy.html" hreflang="ru" lang="ru">Русский</a></nav>
 </main>
-</body>
+<script>(function(){var A={"zh-Hans": "简体中文", "zh-Hant": "繁體中文", "ko": "한국어", "vi": "Tiếng Việt", "id": "Bahasa Indonesia", "th": "ไทย", "es": "Español", "pt-BR": "Português (Brasil)", "fr": "Français", "de": "Deutsch", "it": "Italiano", "ru": "Русский"},n=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||''];for(var i=0;i<n.length;i++){var x=String(n[i]),b=x.toLowerCase().split('-')[0],c=null;if(b==='en')return;if(b==='zh')c=/hant|-tw|-hk|-mo/i.test(x)?'zh-Hant':'zh-Hans';else if(b==='pt')c='pt-BR';else if(b==='in')c='id';else for(var k in A)if(k.toLowerCase()===b)c=k;if(c&&A[c]){var a=document.createElement('a');a.href=c+'/privacy.html';a.lang=c;a.hreflang=c;a.className='langhint';a.textContent=A[c]+' →';document.body.insertBefore(a,document.body.firstChild);return}}})();</script>
+<style>.langhint{display:block;padding:7px 16px;text-align:center;font-size:15px;font-weight:600;background:#1a6a53;color:#fff;text-decoration:none}.langhint:hover{text-decoration:underline}</style></body>
 </html>
